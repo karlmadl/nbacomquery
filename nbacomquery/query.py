@@ -6,8 +6,8 @@ from nbacomquery.utils import load_yaml, build_yaml_path
 class Query:
     """
     Uses `stats_type` and kwargs to build and execute a query string
-    to nba.com/stats/. The `.json` method returns the raw query 
-    response. The `.dataframe` method parses json and returns pandas 
+    to nba.com/stats/. The `.json` method returns the raw query
+    response. The `.dataframe` method parses json and returns pandas
     dataframe
     """
 
@@ -16,7 +16,7 @@ class Query:
         self.tags = kwargs
 
         yaml = load_yaml(build_yaml_path(f"{stats_type}.yaml"))
-        self.headers, self.tag_dict = yaml['headers'], yaml['tags']
+        self.headers, self.tag_dict = yaml["headers"], yaml["tags"]
         self.validate_tags()
         self.set_tags()
 
@@ -26,16 +26,18 @@ class Query:
 
     def validate_tags(self) -> None:
         """
-        Checks that all kwargs at class instantiation are valid query 
-        parameters/tags. 
+        Checks that all kwargs at class instantiation are valid query
+        parameters/tags.
         """
         for tag in self.tags:
             if tag not in self.tag_dict:
-                raise ValueError(f"{tag} is not a valid tag for {self.stats_type} stats")
+                raise ValueError(
+                    f"{tag} is not a valid tag for {self.stats_type} stats"
+                )
 
     def set_tags(self) -> None:
         """
-        Replaces all default query parameters that were specified by 
+        Replaces all default query parameters that were specified by
         kwargs.
         """
         for tag in self.tags:

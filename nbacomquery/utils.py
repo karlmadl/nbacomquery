@@ -2,7 +2,9 @@ import yaml
 from pathlib import Path
 
 
-def load_yaml(file: Path) -> dict:  # add exception handling for loading unknown .yaml files
+def load_yaml(
+    file: Path,
+) -> dict:  # add exception handling for loading unknown .yaml files
     try:
         with open(file) as f:
             return yaml.full_load(f)
