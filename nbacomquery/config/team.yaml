@@ -1,3 +1,6 @@
+url:
+  leaguedashteamstats
+
 headers:
   Connection: "keep-alive"
   Accept: "application/json, text/plain, */*"

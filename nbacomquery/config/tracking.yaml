@@ -1,5 +1,5 @@
 url:
-  leaguedashplayerstats
+  leaguedashptstats
 
 headers:
   Connection: "keep-alive"
@@ -14,39 +14,33 @@ headers:
   Accept-Language: "en-US,en;q=0.9"
 
 tags:
-  College: ""
-  Conference: ""
-  Country: ""
-  DateFrom: ""
-  DateTo: ""
-  Division: ""
-  DraftPick: ""
-  DraftYear: ""
-  GameScope: ""
-  GameSegment: ""
-  Height: ""
+  College: 
+  Conference: 
+  Country: 
+  DateFrom: 
+  DateTo: 
+  Division: 
+  DraftPick: 
+  DraftYear: 
+  GameScope: 
+  Height: 
   LastNGames: "0"
   LeagueID: "00"
-  Location: ""
-  MeasureType: Base
+  Location: 
   Month: "0"
   OpponentTeamID: "0"
-  Outcome: ""
+  Outcome: 
   PORound: "0"
-  PaceAdjust: "N"
   PerMode: PerGame
-  Period: "0"
-  PlayerExperience: ""
-  PlayerPosition: ""
-  PlusMinus: "N"
-  Rank: "N"
+  PlayerExperience: 
+  PlayerOrTeam: Player
+  PlayerPosition: 
+  PtMeasureType: Drives
   Season: 2022-23
-  SeasonSegment: ""
-  SeasonType: Regular+Season
-  ShotClockRange: ""
-  StarterBench: ""
+  SeasonSegment: 
+  SeasonType: Regular Season
+  StarterBench: 
   TeamID: "0"
-  TwoWay: "0"
-  VsConference: ""
-  VsDivision: ""
-  Weight: ""
+  VsConference: 
+  VsDivision: 
+  Weight: 

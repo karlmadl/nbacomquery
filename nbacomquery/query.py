@@ -4,9 +4,14 @@ from nbacomquery.utils import load_yaml, build_yaml_path
 
 
 class Query:
-    """Object that connects to the json file"""
+    """
+    Uses `stats_type` and kwargs to build and execute a query string
+    to nba.com/stats/. The `.json` method returns the raw query 
+    response. The `.dataframe` method parses json and returns pandas 
+    dataframe
+    """
 
-    def __init__(self, stats_type, **kwargs) -> None:
+    def __init__(self, stats_type: str, **kwargs) -> None:
         self.stats_type = stats_type
         self.tags = kwargs
 
@@ -15,23 +20,37 @@ class Query:
         self.validate_tags()
         self.set_tags()
 
-        self.url = f"https://stats.nba.com/stats/leaguedash{stats_type}stats?" + "&".join(
+        self.url = f"https://stats.nba.com/stats/{yaml['url']}?" + "&".join(
             [f"{key}={value}" for key, value in self.tag_dict.items()]
         )
 
-    def validate_tags(self):
+    def validate_tags(self) -> None:
+        """
+        Checks that all kwargs at class instantiation are valid query 
+        parameters/tags. 
+        """
         for tag in self.tags:
             if tag not in self.tag_dict:
                 raise ValueError(f"{tag} is not a valid tag for {self.stats_type} stats")
 
-    def set_tags(self):
+    def set_tags(self) -> None:
+        """
+        Replaces all default query parameters that were specified by 
+        kwargs.
+        """
         for tag in self.tags:
             self.tag_dict[tag] = f"{self.tags[tag]}"
 
-    def json(self):
+    def json(self) -> dict:
+        """
+        Returns raw JSON response from query.
+        """
         return requests.get(self.url, headers=self.headers).json()
 
     def dataframe(self):
+        """
+        Parses JSON reponse and returns pandas DataFrame.
+        """
         response = self.json()["resultSets"][0]
         rows = response["rowSet"]
         col_names = response["headers"]
