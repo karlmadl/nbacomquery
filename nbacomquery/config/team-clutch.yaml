@@ -1,5 +1,5 @@
 url:
-  leaguedashteamclutch
+  https://stats.nba.com/stats/leaguedashteamclutch?
 
 headers:
   Connection: "keep-alive"
@@ -13,7 +13,7 @@ headers:
   Accept-Encoding: "gzip, deflate, br"
   Accept-Language: "en-US,en;q=0.9"
 
-tags:
+params:
   AheadBehind: Ahead or Behind
   ClutchTime: Last 5 Minutes
   College: ""

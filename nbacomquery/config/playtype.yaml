@@ -1,5 +1,5 @@
 url:
-  synergyplaytypes
+  https://stats.nba.com/stats/synergyplaytypes?
 
 headers:
   Connection: "keep-alive"
@@ -13,11 +13,11 @@ headers:
   Accept-Encoding: "gzip, deflate, br"
   Accept-Language: "en-US,en;q=0.9"
 
-tags:
+params:
   LeagueID: "00"
   PerMode: PerGame
   PlayType: Isolation
   PlayerOrTeam: P
-  SeasonType: Regular Season
+  SeasonType: Regular+Season
   SeasonYear: 2022-23
   TypeGrouping: offensive

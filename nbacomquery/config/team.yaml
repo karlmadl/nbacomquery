@@ -1,5 +1,5 @@
 url:
-  leaguedashteamstats
+  https://stats.nba.com/stats/leaguedashteamstats?
 
 headers:
   Connection: "keep-alive"
@@ -13,7 +13,7 @@ headers:
   Accept-Encoding: "gzip, deflate, br"
   Accept-Language: "en-US,en;q=0.9"
 
-tags:
+params:
   Conference: ""
   DateFrom: ""
   DateTo: ""

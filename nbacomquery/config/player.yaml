@@ -1,5 +1,5 @@
 url:
-  leaguedashplayerstats
+  https://stats.nba.com/stats/leaguedashplayerstats?
 
 headers:
   Connection: "keep-alive"
@@ -13,7 +13,7 @@ headers:
   Accept-Encoding: "gzip, deflate, br"
   Accept-Language: "en-US,en;q=0.9"
 
-tags:
+params:
   College: ""
   Conference: ""
   Country: ""

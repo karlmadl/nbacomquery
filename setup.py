@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.11"
+VERSION = "0.0.12"
 DESCRIPTION = "nba.com/stats querying package"
 LONG_DESCRIPTION = "nba.com/stats querying package and more information"
 
